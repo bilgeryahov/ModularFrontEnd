@@ -1,0 +1,34 @@
+{
+  "name": "modular-front-end",
+  "version": "1.0.0",
+  "description": "Modular front - end app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bilgeryahov/ModularFrontEnd.git"
+  },
+  "keywords": [
+    "modular",
+    "front",
+    "end"
+  ],
+  "author": "Bilger Yahov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bilgeryahov/ModularFrontEnd/issues"
+  },
+  "homepage": "https://github.com/bilgeryahov/ModularFrontEnd#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^3.1.0",
+    "run-sequence": "^1.2.2"
+  }
+}
