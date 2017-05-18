@@ -2,19 +2,19 @@
  * Created by Bilger on 18-May-17.
  */
 
-const Head = {
+const Header = {
 
     _template: null,
     _placeholder: null,
-    _templatePath: './Modules/Head/head.html',
+    _templatePath: './Modules/Header/header.html',
 
     init(){
         const selfObj = this;
-        selfObj._template = document.getElementById('HeadTemplate');
-        selfObj._placeholder = document.getElementById('HeadPlaceholder');
+        selfObj._template = document.getElementById('HeaderTemplate');
+        selfObj._placeholder = document.getElementById('HeaderPlaceholder');
 
         new Request({
-            url: selfObj._templatePath,
+            url:selfObj._templatePath,
             method: 'get',
             onSuccess(data){
                 return selfObj.generateTemplate(data);
@@ -25,10 +25,10 @@ const Head = {
     generateTemplate(data){
         const selfObj = this;
         const compiled = Handlebars.compile(data);
-        selfObj._placeholder.innerHTML = compiled();
+        selfObj._placeholder.innerHTML = compiled({name: 'Bilger'});
     }
 };
 
 document.addEvent('domready', function () {
-   Head.init();
+    Header.init();
 });
