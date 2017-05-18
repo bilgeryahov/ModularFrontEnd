@@ -31,7 +31,7 @@ gulp.task('copy_content', function(){
 // Compile JS ES6 to JS ES5.
 gulp.task('compile_javascript',  function(){
 
-    return gulp.src('./deploy/**/*.js')
+    return gulp.src('./deploy/Modules/**/*.js')
         .pipe(babel())
         .pipe(gulp.dest('./deploy/'));
 });
@@ -39,7 +39,7 @@ gulp.task('compile_javascript',  function(){
 // Compile SCSS to CSS.
 gulp.task('compile_css', function(){
 
-    return gulp.src('./deploy/**/*.scss')
+    return gulp.src('./deploy/Modules/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./deploy/'));
 });
