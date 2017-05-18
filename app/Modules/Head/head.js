@@ -5,6 +5,11 @@
 const Head = {
 
     init(){
-
+        alert("Head loaded!");
     }
 };
+
+document.addEvent('domready', function(){
+
+    Head.init();
+});
