@@ -33,7 +33,7 @@ gulp.task('compile_javascript',  function(){
 
     return gulp.src('./deploy/Modules/**/*.js')
         .pipe(babel())
-        .pipe(gulp.dest('./deploy/'));
+        .pipe(gulp.dest('./deploy/Modules/'));
 });
 
 // Compile SCSS to CSS.
@@ -41,7 +41,7 @@ gulp.task('compile_css', function(){
 
     return gulp.src('./deploy/Modules/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./deploy/'));
+        .pipe(gulp.dest('./deploy/Modules/'));
 });
 
 // Deploy locally.
