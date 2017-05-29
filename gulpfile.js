@@ -31,17 +31,31 @@ gulp.task('copy_content', function(){
 // Compile JS ES6 to JS ES5.
 gulp.task('compile_javascript',  function(){
 
-    return gulp.src('./deploy/Modules/**/*.js')
+    // Make sure to take everything from the modules.
+    // Make sure to take only the EcmaScript 6 files, without Vendor folder.
+    const paths = [
+        './deploy/Modules/**/*.js',
+        './deploy/JS/*.js'
+    ];
+
+    return gulp.src(paths, {base: './'})
         .pipe(babel())
-        .pipe(gulp.dest('./deploy/Modules/'));
+        .pipe(gulp.dest('./'));
 });
 
 // Compile SCSS to CSS.
 gulp.task('compile_css', function(){
 
-    return gulp.src('./deploy/Modules/**/*.scss')
+    // Make sure to take everything from the modules.
+    // Make sure to take only the scss stylesheets, without Vendor folder.
+    const paths = [
+        './deploy/Modules/**/*.scss',
+        './deploy/CSS/*.scss'
+    ];
+
+    return gulp.src(paths, {base: './'})
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./deploy/Modules/'));
+        .pipe(gulp.dest('./'));
 });
 
 // Deploy locally.

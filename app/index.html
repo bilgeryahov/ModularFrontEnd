@@ -6,6 +6,13 @@
         <header id="HeaderPlaceholder">
         </header>
         <div id="MainWrapper">
+            <section id="AddInfoPlaceholder">
+            </section>
+            <br/>
+            <br/>
+            <br/>
+            <section id="FetchInfoPlaceholder">
+            </section>
         </div>
         <footer id="FooterPlaceholder">
         </footer>
@@ -14,6 +21,10 @@
         <script type="text/javascript" src="./JS/Vendor/handlebars-v4.0.5.js"></script>
         <script type="text/javascript" src="./JS/Vendor/MooTools-Core-1.6.0.js"></script>
         <script type="text/javascript" src="./JS/Vendor/MooTools-More-1.6.0.js"></script>
+
+        <!-- Specific JS files go here -->
+        <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+        <script type="text/javascript" src="./JS/FirebaseEngine.js"></script>
 
         <!-- Vendor CSS, which has to be pre-loaded. -->
         <link rel="stylesheet" href="./CSS/Vendor/w3css.css">
@@ -27,5 +38,15 @@
         <script id="HeaderTemplate" type="text/x-handlebars-template" src="./Modules/Header/header.html"></script>
         <script type="text/javascript" src="./Modules/Header/header.js"></script>
         <link rel="stylesheet" href="./Modules/Header/header.css">
+
+        <!-- AddInfo module -->
+        <script id="AddInfoTemplate" type="text/x-handlebars-template" src="./Modules/AddInfo/add_info.html"></script>
+        <script type="text/javascript" src="./Modules/AddInfo/add_info.js"></script>
+        <link rel="stylesheet" href="./Modules/AddInfo/add_info.css">
+
+        <!-- FetchInfo module -->
+        <script id="FetchInfoTemplate" type="text/x-handlebars-template" src="./Modules/FetchInfo/fetch_info.html"></script>
+        <script type="text/javascript" src="./Modules/FetchInfo/fetch_info.js"></script>
+        <link rel="stylesheet" href="./Modules/FetchInfo/fetch_info.css">
     </body>
 </html>
