@@ -7,6 +7,8 @@ const run_sequence = require('run-sequence');
 const replace = require('gulp-replace');
 const clean  = require('gulp-clean');
 
+const inject = require('gulp-inject');
+
 // Clean the folder.
 gulp.task('clean_content', function(){
 
@@ -62,4 +64,17 @@ gulp.task('compile_css', function(){
 gulp.task('deploy_locally', function(){
 
     return run_sequence('clean_content', 'copy_content', 'compile_css', 'compile_javascript', 'clean_scss');
+});
+
+gulp.task('test', function () {
+
+    return gulp.src('./app/test.html')
+        .pipe(inject(gulp.src(['./app/Modules/Head/*.html']), {
+            starttag: '<!-- inject:head:{{ext}} -->',
+            transform: function (filePath, file) {
+                // return file contents as string
+                return file.contents.toString('utf8')
+            }
+        }))
+        .pipe(gulp.dest('./deploy'));
 });
